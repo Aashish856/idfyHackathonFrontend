@@ -21,7 +21,7 @@ const SQL = () => {
         if (!host || !root || !password || !database) return;
         setLoading(true);
         try {
-            const response = await axios.post("http://localhost:3000/detectPII/sql", { host, root, password, database });
+            const response = await axios.post("http://localhost:3001/detectPII/sql", { host, root, password, database });
             const { out_path, msg } = response.data;
             
             setTimer(0);
@@ -43,7 +43,7 @@ const SQL = () => {
             return;
         }
         try {
-            const response = await axios.get(`http://localhost:3000/results/${outPath}`);
+            const response = await axios.get(`http://localhost:3001/results/${outPath}`);
             const { verdict, entities } = response.data;
             setVerdict(verdict);
             if (verdict === "Processed") {

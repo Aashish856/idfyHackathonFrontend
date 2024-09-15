@@ -22,7 +22,7 @@ const CustomData = () => {
         setTimer(0);
         setEntities([])
         try {
-            const response = await axios.post("http://localhost:3000/detectPII", { filePath, dataType });
+            const response = await axios.post("http://localhost:3001/detectPII", { filePath, dataType });
             const { out_path, msg } = response.data;
 
             setOutPath(out_path);
@@ -41,7 +41,7 @@ const CustomData = () => {
             return;
         }
         try {
-            const response = await axios.get(`http://localhost:3000/results/${outPath}`);
+            const response = await axios.get(`http://localhost:3001/results/${outPath}`);
             const { verdict, entities } = response.data;
             setVerdict(verdict);
             if (verdict === "Processed") {
