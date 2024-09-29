@@ -29,9 +29,14 @@ i have made a free account on freemysqlhosting.net and pushed some tables in tha
 You can use below mentioned credentials to test out my sql data stream
 
 // Database configuration
+
 const dbConfig = {
+
   host: 'sql12.freemysqlhosting.net',
+
   user: 'sql12734197',
+
   password: 'RGjLjw6t55',
+
   database: 'sql12734197',
 };
